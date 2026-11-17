@@ -18,6 +18,7 @@ function addBookToLibrary(name,author,pages,status) {
 function showCards(){
     const len = myLibrary.length;
     const main_content=document.querySelector(".main_content");
+    main_content.replaceChildren();//so no copy is made when we call the function again
     for(let i = 0;i<len;i++){
         const card = document.createElement("div");
         card.classList.add("card");
@@ -34,12 +35,22 @@ function showCards(){
 
 const dialog = document.querySelector("dialog");
 const add_book = document.querySelector(".header>button");
-const close = document.querySelector("dialog  button");
-
+const close = document.querySelector("dialog>button");
+const form = document.querySelector("form");
 add_book.addEventListener("click",()=>{
     dialog.showModal();
 });
 
 close.addEventListener("click",()=>{
+    dialog.close();
+});
+
+const submit = document.querySelector("form button");
+
+form.addEventListener("submit",(event)=>{
+    event.preventDefault();
+    const data = Object.fromEntries(new FormData(form));
+    addBookToLibrary(data.name,data.author,data.pages,data.status);
+    showCards();
     dialog.close();
 });
