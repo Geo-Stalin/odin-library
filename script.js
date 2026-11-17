@@ -31,3 +31,15 @@ function showCards(){
         main_content.appendChild(card);
     }
 }
+
+const dialog = document.querySelector("dialog");
+const add_book = document.querySelector(".header>button");
+const close = document.querySelector("dialog  button");
+
+add_book.addEventListener("click",()=>{
+    dialog.showModal();
+});
+
+close.addEventListener("click",()=>{
+    dialog.close();
+});
