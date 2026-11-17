@@ -1,16 +1,33 @@
 const myLibrary = [];
 
-function Book(id,b_name,author,pages,status) {
+function Book(id,name,author,pages,status) {
     this.id=id;
-    this.b_name=b_name;
+    this.name=name;
     this.author=author;
     this.pages=pages;
     this.status=status;
 }
 
-function addBookToLibrary(b_name,author,pages,status) {
+function addBookToLibrary(name,author,pages,status) {
     
     const id = crypto.randomUUID();
-    const book = new Book(id,b_name,author,pages,status);
+    const book = new Book(id,name,author,pages,status);
     myLibrary.push(book);
+}
+
+function showCards(){
+    const len = myLibrary.length;
+    const main_content=document.querySelector(".main_content");
+    for(let i = 0;i<len;i++){
+        const card = document.createElement("div");
+        card.classList.add("card");
+        for(const [key, value] of Object.entries(myLibrary[i])){
+            if(key!='id'){
+                const p = document.createElement("p");
+                p.textContent=`${key}: ${value}`;
+                card.appendChild(p);
+            }
+        }
+        main_content.appendChild(card);
+    }
 }
