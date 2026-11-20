@@ -27,7 +27,20 @@ function showCards(){
             if(key==='id'){
                 card.id=value;
             }
-                
+            else if(key==='status'){
+                const stat_btn=document.createElement("button");
+                stat_btn.textContent=`${value}`;
+                if(value==="read"){
+                    stat_btn.classList.add("stat_read");
+                    stat_btn.textContent="Read";
+                }
+                else{
+                    stat_btn.classList.add("stat_not_read");
+                    stat_btn.textContent="Not Read";
+                }
+                stat_btn.classList.add("stat_btn");
+                card.appendChild(stat_btn);
+            } 
             else{
                 const p = document.createElement("p");
                 p.textContent=`${key}: ${value}`;
@@ -64,7 +77,6 @@ form.addEventListener("submit",(event)=>{
     dialog.close();
 });
 
-const del_btn=document.querySelector(".card>button");
 main_content.addEventListener("click",(event)=>{
     if(!event.target.classList.contains("del_btn")) return;
     const card = event.target.closest(".card");
@@ -74,4 +86,24 @@ main_content.addEventListener("click",(event)=>{
         myLibrary.splice(index,1);
     }
     showCards();
+});
+
+const stat_btn=document.querySelector(".stat_btn");
+main_content.addEventListener("click",(event)=>{
+    if(!event.target.classList.contains("stat_btn")) return;
+    const card=event.target.closest(".card");
+    const book = myLibrary.find(b => b.id===card.id);
+    if(event.target.classList.contains("stat_read")){
+        event.target.textContent="Not Read";
+        event.target.classList.add("stat_not_read");
+        event.target.classList.remove("stat_read");
+        book.status="not read";
+    }
+    else{
+        event.target.textContent="Read";
+        event.target.classList.add("stat_read");
+        event.target.classList.remove("stat_not_read");
+        book.status="read";
+    }
+
 });
