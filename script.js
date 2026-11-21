@@ -2,9 +2,9 @@ const myLibrary = [];
 
 function Book(id,name,author,pages,status) {
     this.id=id;
-    this.name=name;
-    this.author=author;
-    this.pages=pages;
+    this.Name=name;
+    this.Author=author;
+    this.Pages=pages;
     this.status=status;
 }
 
@@ -48,7 +48,7 @@ function showCards(){
             }
         }
         const del_btn=document.createElement("button");
-        del_btn.textContent="DEL";
+        del_btn.textContent="REMOVE";
         del_btn.classList.add("del_btn");
         card.appendChild(del_btn);
         main_content.appendChild(card);

@@ -35,7 +35,6 @@ svg {
 }
 
 /* 7. Inherit fonts for form controls */
-input,
 button,
 textarea,
 select {
@@ -84,6 +83,8 @@ h6 {
     display: grid;
     grid-template-rows: 15vh 5fr;
     min-height: 100vh;
+    font-family: sans-serif;
+
 }
 
 .header{
@@ -107,12 +108,39 @@ h6 {
     grid-template-columns: repeat(auto-fit,250px);
     grid-auto-rows: 250px;
     gap: 100px;
+    padding: 50px;
 }
 
 .card{
   background-color: white;
   display: flex;
   flex-direction: column;
+  padding: 15px;
+  align-items: center;
+  justify-content:space-between;
+  border-radius: 12px;
+  text-align: center;
+  overflow: hidden;
+}
+.card button{
+  width: 200px;
+  min-height: 30px;
+  height: 30px;
+  border-radius: 8px;
+}
+
+.card p {
+  width: 100%;            
+  text-align: center;      
+  white-space: nowrap;     
+  overflow: hidden;       
+  text-overflow: ellipsis; 
+  font-size: 18px;
+}
+
+.stat_btn{
+  margin-top: 60px;
+  margin-bottom: 10px;
 }
 
 .stat_read{
