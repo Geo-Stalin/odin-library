@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
+
 <body>
     <div class="container">
         <div class="header">
@@ -14,32 +16,33 @@
             <button>Add Book</button>
         </div>
         <dialog>
-            <button>CLOSE</button>
+            <button>X</button>
             <form>
                 <div class="form_group">
                     <label for="name">Book Name</label>
-                <input type="text" id="name" name="name">
+                    <input type="text" id="name" name="name" required>
                 </div>
-                
+
                 <div class="form_group">
                     <label for="author">Author</label>
-                <input type="text" id="author" name="author">
+                    <input type="text" id="author" name="author">
                 </div>
-                
+
                 <div class="form_group">
                     <label for="pages">Pages</label>
-                <input type="number" id="pages" name="pages">
+                    <input type="number" id="pages" name="pages">
                 </div>
-                
-                <div class="form_group">
-                    <label for="status">read?</label>
-                   <input type="checkbox" id="status" name="status" value="read">
+
+                <div class="read_check">
+                    <label for="status">Have you read this?</label>
+                    <input type="checkbox" id="status" name="status" value="read">
                 </div>
                 <button>submit</button>
             </form>
         </dialog>
-        
+
         <div class="main_content"></div>
     </div>
 </body>
+
 </html>

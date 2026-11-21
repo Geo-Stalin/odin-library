@@ -75,6 +75,7 @@ form.addEventListener("submit",(event)=>{
     addBookToLibrary(data.name,data.author,data.pages,data.status);
     showCards();
     dialog.close();
+    form.reset();
 });
 
 main_content.addEventListener("click",(event)=>{

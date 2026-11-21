@@ -96,9 +96,39 @@ h6 {
     align-items: center;
     padding: 30px;
     font-size: 24px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
+dialog[open]{
+  display: flex;
+  flex-direction: column;
+}
 
+dialog>button{
+  margin-left: auto;
+  background-color: #EF4444;
+  color: whitesmoke;
+  min-width: 25px;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+  gap:5px;
+}
+
+.form_group{
+  display: flex;
+  justify-content: space-between;
+}
+
+.read_check{
+  display: flex;
+  justify-content: center;
+}
 
 .main_content{
     grid-row: 2;
@@ -144,9 +174,9 @@ h6 {
 }
 
 .stat_read{
-  background-color: green;
+  background-color: #0bcd0f;
 }
 
 .stat_not_read{
-  background-color: red;
+  background-color: #ED2938;
 }
