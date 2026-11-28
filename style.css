@@ -101,9 +101,17 @@ h6 {
     z-index: 1000;
 }
 
+.header>button{
+  border-radius: 8px;
+}
+
 dialog[open]{
   display: flex;
   flex-direction: column;
+  min-height: 40vh;
+  height: fit-content;
+  padding: 20px;
+  border-radius: 12px;
 }
 
 dialog>button{
@@ -120,9 +128,26 @@ form{
   gap:5px;
 }
 
+form>button{
+  background-color: black;
+  color: whitesmoke;
+  height: 32px;
+  border-radius: 12px;
+}
+
 .form_group{
   display: flex;
   justify-content: space-between;
+  gap: 15px;
+}
+
+.form_group>*{
+  margin: 10px;
+}
+
+input[type="text"],
+input[type="number"]{
+  width: 250px;
 }
 
 .read_check{
